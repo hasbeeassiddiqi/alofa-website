@@ -196,11 +196,11 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div className="relative">
                 <div className="absolute -inset-4 bg-red-100 dark:bg-red-600/20 rounded-3xl blur-xl transition-colors duration-500"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1511671782636-dff06cb0e1a3?auto=format&fit=crop&w=800&q=80" 
-                  alt="Alofa Profile" 
-                  className="relative rounded-3xl shadow-2xl object-cover h-[500px] w-full border border-gray-200 dark:border-zinc-800"
-                />
+              <img 
+                src="/logo-alofa.jpeg" 
+                 alt="Alofa Profile" 
+                 className="relative rounded-3xl shadow-2xl object-cover h-[500px] w-full border border-gray-200 dark:border-zinc-800"
+              />
               </div>
               <div>
                 <h2 className="text-red-600 dark:text-yellow-500 font-semibold tracking-wider uppercase mb-2">Tentang Kami</h2>
