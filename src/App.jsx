@@ -90,7 +90,7 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
             <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('home')}>
               <img 
-                src="/logo alofa.jpeg" 
+                src="/logo-alofa.jpeg" 
                 alt="Alofa Logo" 
                 className="w-10 h-10 object-cover rounded-full bg-white border border-gray-200 dark:border-zinc-800"
                 onError={(e) => { e.target.onerror = null; e.target.style.display = 'none'; }}
@@ -400,7 +400,7 @@ export default function App() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <img 
-                    src="/logo alofa.jpeg" 
+                    src="/logo-alofa.jpeg" 
                     alt="Alofa Logo" 
                     className="w-12 h-12 object-cover rounded-full bg-white border border-gray-200 dark:border-zinc-800"
                     onError={(e) => { e.target.onerror = null; e.target.style.display = 'none'; }}
