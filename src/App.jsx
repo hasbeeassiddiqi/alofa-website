@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Instagram, 
-  Youtube, 
   Phone, 
   Mail, 
   Menu, 
@@ -19,10 +17,8 @@ import {
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // State untuk mode gelap/terang (default: dark)
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // Handle scroll effect for navbar
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -72,7 +68,6 @@ export default function App() {
 
   return (
     <div className={`${isDarkMode ? 'dark' : ''}`}>
-      {/* Inject custom styles for Marquee animation */}
       <style>
         {`
           @keyframes scroll {
@@ -115,7 +110,6 @@ export default function App() {
                 </button>
               ))}
               
-              {/* Theme Toggle Button */}
               <button 
                 onClick={() => setIsDarkMode(!isDarkMode)}
                 className={`p-2 rounded-full transition-colors ${isScrolled ? 'bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-yellow-500' : 'bg-black/10 dark:bg-white/10 text-gray-800 dark:text-yellow-500 backdrop-blur-sm'}`}
@@ -172,7 +166,6 @@ export default function App() {
               alt="Band performing" 
               className="w-full h-full object-cover opacity-20 dark:opacity-30 transition-opacity duration-500"
             />
-            {/* Gradient adapts to theme */}
             <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-red-50/70 to-gray-50 dark:from-black/60 dark:via-red-950/40 dark:to-black transition-colors duration-500"></div>
           </div>
           
@@ -239,7 +232,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* DISKOGRAFI / KARYA SECTION (WITH ANIMATION) */}
+        {/* DISKOGRAFI / KARYA SECTION */}
         <section id="diskografi" className="py-24 bg-gray-50 dark:bg-zinc-950 border-y border-gray-200 dark:border-zinc-900 transition-colors duration-500 overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center mb-16">
             <h2 className="text-red-600 dark:text-yellow-500 font-semibold tracking-wider uppercase mb-2">Karya Original</h2>
@@ -249,13 +242,11 @@ export default function App() {
             </p>
           </div>
 
-          {/* Marquee Animation Container for Diskografi */}
           <div className="relative w-full py-4">
             <div className="absolute inset-y-0 left-0 w-12 md:w-32 bg-gradient-to-r from-gray-50 dark:from-zinc-950 to-transparent z-10 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-12 md:w-32 bg-gradient-to-l from-gray-50 dark:from-zinc-950 to-transparent z-10 pointer-events-none"></div>
             
             <div className="flex w-max animate-scroll gap-6 px-6" style={{ animationDirection: 'reverse' }}>
-              {/* Double the array, reverse the scroll direction for variety */}
               {[...singles, ...singles].map((single, index) => {
                 const cardContent = (
                   <div className={`w-80 md:w-96 flex items-center justify-between p-4 bg-white dark:bg-black border border-gray-200 dark:border-zinc-800 rounded-2xl hover:border-red-500 dark:hover:border-red-600 shadow-sm hover:shadow-md transition-all group ${single.url ? 'cursor-pointer' : ''}`}>
@@ -330,7 +321,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* BOOKING / CARA PESAN SECTION */}
+        {/* BOOKING SECTION */}
         <section id="booking" className="py-24 bg-yellow-400 dark:bg-yellow-500 text-black transition-colors duration-500">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -421,10 +412,10 @@ export default function App() {
                 </p>
                 <div className="flex gap-4">
                   <a href="https://www.instagram.com/alofaofficial/" target="_blank" rel="noopener noreferrer" className="bg-gray-100 dark:bg-zinc-900 p-3 rounded-full hover:bg-red-600 dark:hover:bg-red-600 hover:text-white dark:hover:text-white transition-colors text-gray-600 dark:text-gray-300">
-                    <Instagram className="w-6 h-6" />
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                   </a>
                   <a href="https://www.youtube.com/@alofaofficial" target="_blank" rel="noopener noreferrer" className="bg-gray-100 dark:bg-zinc-900 p-3 rounded-full hover:bg-red-600 dark:hover:bg-red-600 hover:text-white transition-colors text-gray-600 dark:text-gray-300">
-                    <Youtube className="w-6 h-6" />
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 7.1C2.5 7.1 2.5 5 4.6 4.6C5.8 4.3 12 4.3 12 4.3s6.2 0 7.4.3c2.1.4 2.1 2.5 2.1 2.5s.3 2 .3 4.9v1.4c0 2.9-.3 4.9-.3 4.9s0 2.1-2.1 2.5c-1.2.3-7.4.3-7.4.3s-6.2 0-7.4-.3c-2.1-.4-2.1-2.5-2.1-2.5s-.3-2-.3-4.9V12c0-2.9.3-4.9.3-4.9Z"/><path d="m10 15 5-3-5-3v6Z"/></svg>
                   </a>
                   <a href="https://www.tiktok.com/@alofa_officiall" target="_blank" rel="noopener noreferrer" className="bg-gray-100 dark:bg-zinc-900 p-3 rounded-full hover:bg-red-600 dark:hover:bg-red-600 hover:text-white transition-colors text-gray-600 dark:text-gray-300">
                     <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
